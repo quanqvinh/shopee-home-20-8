@@ -1,0 +1,149 @@
+:root {
+    --white-color: white;
+    --black-color: black;
+    --primary-color: #f2522e;
+    --header-background-color: linear-gradient(180deg, #f53d2d, #fe6532);
+    --header-height: 12rem;
+    --header-navbar-height: 3.4rem;
+    --header-container-height: calc(var(--header-height) - var(--header-navbar-height));
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Open Sans', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.line-separate {
+    position: relative;
+}
+
+.line-separate::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+
+.popup {
+    background-color: var(--white-color);
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 8px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .2s cubic-bezier(.22,.61,.36,1);
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.popup-expand:hover + .popup, .popup:hover {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.popup::before {
+    content: "";
+    border-width: 10px 14px;
+    border-color: transparent transparent var(--white-color) transparent;
+    border-style: solid;
+    display: block;
+    position: absolute;
+    animation: popupAppear cubic-bezier(.22,.61,.36,1) .3s;
+    transform-origin: center bottom;
+}
+
+.popup::after {
+    content: "";
+    display: block;
+    height: 20px;
+    position: absolute;
+}
+
+.popup * {
+    color: var(--black-color) !important;
+}
+
+.popup-header {
+    line-height: 4rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    opacity: 0.4;
+    padding: 0 1rem;
+}
+
+.btn {
+    height: 3.4rem;
+    line-height: 3.4rem;
+    text-decoration: none;
+    font-size: 1.4rem;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn--primary {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popupShow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes collapseSlide {
+    to {
+        width: 0;
+    }
+}
