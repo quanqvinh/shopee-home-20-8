@@ -141,9 +141,3 @@ html {
         transform: scale(1);
     }
 }
-
-@keyframes collapseSlide {
-    to {
-        width: 0;
-    }
-}
