@@ -120,6 +120,49 @@ html {
     color: var(--white-color) !important;
 }
 
+.discount-label {
+    background-color: rgb(255,216,57, 0.9);
+    width: 36px;
+    height: 32px;
+    padding: 4px 2px 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.discount-label div {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+}
+
+.discount-label div:nth-of-type(1) {
+    color: #ef542e;
+}
+
+.discount-label div:nth-of-type(2) {
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.discount-label::after {
+    content: "";
+    display: block;
+    border-width: 0 18px 4px;
+    border-style: solid;
+    border-color: rgb(255,216,57, 0.9) rgb(255,216,57, 0.9) transparent rgb(255,216,57, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.discount-label--larger {
+    transform: scale(1.4) translate(-16%, 16%);
+}
+
+.discount-label--larger div {
+    font-weight: bold;
+}
 
 /* Animation */
 @keyframes fadeIn {

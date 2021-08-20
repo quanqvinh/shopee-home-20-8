@@ -462,12 +462,13 @@
 /* ----------------Wrapper------------------ */
 .wrapper {
     background-color: #f5f5f5;
-}
-
-.home-banners-wrapper {
-    background-image: url('assets/img/hot-event/background20-8.png');
+    background-image: url('../img/hot-event/background20-8.png');
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+/* Slider banner */
+.home-banners-wrapper {
     height: 383px;
     padding-top: 30px;
     display: flex;
@@ -572,6 +573,7 @@
     margin-left: -2.9px;
 }
 
+/* Banner picture */
 .banners-picture {
     flex-grow: 1;
     flex-shrink: 0;
@@ -625,4 +627,131 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+}
+
+/* Newbie banner picture */
+.newbie-banner {
+    margin-top: 20px;
+}
+
+.newbie-banner__image {
+    width: 100%;
+    height: 110px;
+}
+
+/* Super sale 20.8 */
+.super-sale-banner {
+    margin-top: 20px;
+}
+
+.super-sale-banner-header {
+    height: 10rem;
+}
+
+.super-sale-banner-body {
+    background-image: url('../img/hot-event/sieu-sale-20.8-body.jfif');
+    background-size: cover;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.super-sale-banner-body__outstanding-content {
+
+}
+
+.super-sale-banner-body__outstanding-content-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 13.5px 0 15px;
+    align-items: center;
+    height: 6rem;
+}
+
+.super-sale-banner-body__outstanding-content-header--name {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.super-sale-banner-body__outstanding-content-header--see-more {
+    display: block;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.super-sale-banner-body__outstanding-content-header--see-more i {
+    font-size: 9px;
+}
+
+.super-sale-banner-body__outstanding-content-body {
+    display: flex;
+}
+
+.super-sale-banner-body__outstanding-content-body--product, .super-sale-banner-body__outstanding-content-body--brand {
+    flex: 1;
+    min-height: 23.7rem;
+    padding: 0 15px;
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+}
+
+.super-sale-banner-body__outstanding-content-body--brand {
+    justify-content: flex-start;
+}
+
+.super-sale-banner-body__outstanding-content-body--product + .super-sale-banner-body__outstanding-content-body--product {
+    margin-left: 1px;
+}
+
+.super-sale-banner-body__outstanding-content-body--product-image, .super-sale-banner-body__outstanding-content-body--brand-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 162px;
+    height: 162px;
+    margin-bottom: 15px;
+}
+
+.super-sale-banner-body__outstanding-content-body--brand-image--brand-logo {
+    width: 14rem;
+    height: 5.6rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 13.2rem;
+    background-color: var(--white-color);
+    border-radius: calc(5.6rem / 2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+.super-sale-banner-body__outstanding-content-body--brand-image--brand-logo img {
+    margin: auto;
+    width: 4.6rem;
+    height: 4.6rem;
+}
+
+.super-sale-banner-body__outstanding-content-body--product-price, .super-sale-banner-body__outstanding-content-body--brand-name {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.super-sale-banner-body__outstanding-content-body--brand-name {
+    line-height: 5.7rem;
+    max-width: 16.2rem;
+}
+
+.super-sale-banner-body__outstanding-content-body--brand-name {
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

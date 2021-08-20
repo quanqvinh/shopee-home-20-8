@@ -124,3 +124,14 @@ const hotLinkImages = document.getElementsByClassName('home-container__hot-link-
 for (let i = 0; i < hotLinkImages.length; i++) {
     hotLinkImages[i].style.backgroundImage = `url('assets/img/wrapper/hot-link-image/${homeNav[i]}')`;
 }
+
+// Super sale 20.8
+const superSaleProduct = document.getElementsByClassName('super-sale-banner-body__outstanding-content-body--product-image');
+const superSaleBrand = document.getElementsByClassName('super-sale-banner-body__outstanding-content-body--brand-image');
+const superSaleBrandLogo = document.querySelectorAll('.super-sale-banner-body__outstanding-content-body--brand-image--brand-logo img');
+
+for (let i = 0; i < superSaleBrandLogo.length; i++) {
+    superSaleProduct[i].style.backgroundImage = `url('assets/img/hot-event/sieu-sale-20-8/product${i + 1}.jfif')`;
+    superSaleBrand[i].style.backgroundImage = `url('assets/img/hot-event/sieu-sale-20-8/brand${i + 1}.jfif')`;
+    superSaleBrandLogo[i].src = `assets/img/hot-event/sieu-sale-20-8/logo${i + 1}.jfif`;
+}
