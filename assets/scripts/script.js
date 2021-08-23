@@ -1,3 +1,13 @@
+// Modal
+document.querySelector('.wrapper').style.height = 'calc(100vh - var(--header-height))';
+document.querySelector('.wrapper').style.overflow = 'hidden';
+
+function closeModal() {
+    document.querySelector('.modal').style.display = 'none';
+    document.querySelector('.wrapper').style.height = 'auto';
+    document.querySelector('.wrapper').style.overflow = 'visible';
+}
+
 // Show and hide popup in header---------------------
 const popups = document.getElementsByClassName('popup');
 const expandBtns = document.getElementsByClassName('popup-expand');
@@ -131,7 +141,58 @@ const superSaleBrand = document.getElementsByClassName('super-sale-banner-body__
 const superSaleBrandLogo = document.querySelectorAll('.super-sale-banner-body__outstanding-content-body--brand-image--brand-logo img');
 
 for (let i = 0; i < superSaleBrandLogo.length; i++) {
-    superSaleProduct[i].style.backgroundImage = `url('assets/img/hot-event/sieu-sale-20-8/product${i + 1}.jfif')`;
-    superSaleBrand[i].style.backgroundImage = `url('assets/img/hot-event/sieu-sale-20-8/brand${i + 1}.jfif')`;
-    superSaleBrandLogo[i].src = `assets/img/hot-event/sieu-sale-20-8/logo${i + 1}.jfif`;
+    superSaleProduct[i].style.backgroundImage = `url('assets/img/wrapper/hot-event/sieu-sale-20-8/product${i + 1}.jfif')`;
+    superSaleBrand[i].style.backgroundImage = `url('assets/img/wrapper/hot-event/sieu-sale-20-8/brand${i + 1}.jfif')`;
+    superSaleBrandLogo[i].src = `assets/img/wrapper/hot-event/sieu-sale-20-8/logo${i + 1}.jfif`;
+}
+
+// Category 
+const categoryContainerRoll = document.querySelector('.category-container-roll');
+const categoryButtons = document.querySelectorAll('.category-container .slide-button');
+var categoryItemWidth = document.querySelector('.category-container__item').offsetWidth;
+
+categoryButtons[0].style.visibility = 'hidden';
+
+for (let i = 0; i < 2; i++) {
+    categoryButtons[i].addEventListener('click', () => {
+        categoryContainerRoll.style.transform = `translateX(${- i * categoryItemWidth * 3}px)`;
+        categoryButtons[i].style.visibility = 'hidden';
+        categoryButtons[(i + 1) % 2].style.visibility = 'visible';
+    })
+}
+
+const categoryImages = document.getElementsByClassName('category-container__item-image');
+
+for (let i = 0; i < categoryImages.length; i++) {
+    categoryImages[i].style.backgroundImage = `url('assets/img/wrapper/category/category${i + 1}.png')`;
+}
+
+// Flash sale 
+const flashSaleContainerRoll = document.querySelector('.flash-sale-container-roll');
+const flashSaleButtons = document.querySelectorAll('.flash-sale-container .slide-button');
+const flashSaleItemWidth = document.querySelector('.flash-sale-container__item').offsetWidth;
+var flashSaleRollPosition = 0;
+flashSaleButtons[0].style.visibility = 'hidden';
+
+for (let i = 0; i < flashSaleButtons.length; i++) {
+    flashSaleButtons[i].addEventListener('click', () => {
+        flashSaleRollPosition += i == 0 ? -1 : 1;
+        flashSaleContainerRoll.style.transform = `translateX(-${flashSaleRollPosition * 5 * flashSaleItemWidth}px)`;
+        if (flashSaleRollPosition == 0) {
+            flashSaleButtons[0].style.visibility = 'hidden';
+        }
+        else if (flashSaleRollPosition == 1) {
+            flashSaleButtons[0].style.visibility = 'visible';
+            flashSaleButtons[1].style.visibility = 'visible';
+        }
+        else {
+            flashSaleButtons[1].style.visibility = 'hidden';
+        }
+    })
+}
+
+const flashSaleItems = document.getElementsByClassName('flash-sale-container__item-image');
+
+for (let i = 0; i < flashSaleItems.length; i++) {
+    flashSaleItems[i].style.backgroundImage = `url('assets/img/wrapper/flash-sale/product/product${i + 1}.jfif')`;
 }

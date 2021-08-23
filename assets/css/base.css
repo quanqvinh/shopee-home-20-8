@@ -164,6 +164,44 @@ html {
     font-weight: bold;
 }
 
+.slide-button {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: calc(2.5rem / 2);
+    position: absolute;
+    top: 50%;
+    display: flex;
+    background-color: var(--white-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.slide-button i {
+    margin: auto;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, .54);
+}
+
+.slide-button--left {
+    left: 0;
+    transform: translate(-50%, -50%);
+    transition: transform linear .1s;
+}
+
+.slide-button--left i {
+    transform: translateX(-1px);
+}
+
+.slide-button--right {
+    right: 0;
+    transform: translate(50%, -50%);
+    transition: transform linear .05s;
+}
+
+.slide-button--right i {
+    transform: translateX(1px);
+}
+
 /* Animation */
 @keyframes fadeIn {
     from {
